@@ -7,7 +7,8 @@ module.exports = withModuleFederationPlugin({
   exposes: {
     './header': './src/app/header/header.component.ts',
     './footer': './src/app/footer/footer.component.ts',
-    './service': './src/services/test.service.ts'
+    './service': './src/services/test.service.ts',
+    './environment': './src/environments/environment.ts'
   },
 
   shared: {

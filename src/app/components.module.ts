@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestService } from '../services/test.service';
+import { environmentProps } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -12,7 +12,14 @@ import { TestService } from '../services/test.service';
   exports: [
     FooterComponent
   ],
-  providers: [TestService],
+  providers: [
+    TestService,
+    {
+      provide: 'environment',
+      useValue: environmentProps,
+    },
+
+  ],
   bootstrap: []
 })
 export class ComponentsModule { }
