@@ -6,7 +6,8 @@
     "types": []
   },
   "files": [
-    "src/main.ts"
+    "src/main.ts",
+    "src/app/remits/remits.module.ts"
   ],
   "include": [
     "src/**/*.d.ts"
