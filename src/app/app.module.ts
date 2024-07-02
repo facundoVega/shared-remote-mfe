@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
-import { SharedLibraryComponent, HeaderComponent, FooterComponent, SidebarComponent } from '@mezomon/shared-library-test'
-import { StoreModule } from "@ngrx/store";
+import { SharedLibraryComponent, HeaderComponent, FooterComponent, SidebarComponent, getStoreModule } from '@mezomon/shared-library-test'
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 
@@ -15,7 +14,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(),
+    getStoreModule(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: false,

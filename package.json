@@ -23,7 +23,7 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3",
-    "@mezomon/shared-library-test": "0.17.0"
+    "@mezomon/shared-library-test": "0.0.23"
   },
   "devDependencies": {
     "@angular-architects/module-federation": "^18.0.2",

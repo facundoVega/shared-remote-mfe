@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LibRoute, MsalCustomService, activeUSer, currentUser } from '@mezomon/shared-library-test';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'remits';
+  
+  routes: LibRoute[] = [
+    { title: 'remits', link:''}
+  ]
 
-  constructor() {}
+  $user = this.store.select(activeUSer)
+
+  constructor(
+    private msalCustomService: MsalCustomService,
+    private store: Store,
+  ) {}
 
   ngOnInit(): void {
-   
+    this.msalCustomService.checkLogin().subscribe((userName)=> { 
+      this.store.dispatch(currentUser({userName: userName}));
+    });
+  }
+
+  logout(): void {
+    this.msalCustomService.logout();
   }
 }
