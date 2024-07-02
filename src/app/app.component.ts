@@ -21,6 +21,10 @@ export class AppComponent implements OnInit {
     private store: Store,
   ) {}
 
+  getStore(): Store {
+    return this.store;
+  }
+
   ngOnInit(): void {
     this.msalCustomService.checkLogin().subscribe((userName)=> { 
       this.store.dispatch(currentUser({userName: userName}));
